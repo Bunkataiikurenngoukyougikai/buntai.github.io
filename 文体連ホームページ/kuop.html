@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<link rel="icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="https://www.wef.com.tw/wp-content/uploads/2021/09/KUAS-logo1.jpg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>早よ出さんかいゴラァ</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { width: 80%; margin: 0 auto; }
+        .section { margin: 20px 0; padding: 20px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body background="https://th.bing.com/th/id/OIP.K_NbjkStECHxOJBG4m-_mwHaFj?rs=1&pid=ImgDetMain">
+<p><span id="sample0">テステス</span></p>
+<p><span id="sample1">ドーモ、コチラ尊厳破壊委員会様デース！</span></p>
+<p><span id="sample2">キャハハハハッ！</span></p>
+<p><span id="sample3">コチラカラテメェラノ活動報告書ヲ提出シロ下サイ by 文体連委員会</span></p>
+<p><span id="sample4"> Fuuuuuuuuck(暗黒微笑)</span></p>
+    <div class="container">
+        <a href="Submit.html"><h1 id="sample7">早よ出せ</h1></a>
+        <a href="Ask.html"><h1>聞けやオラァ</h1></a>
+        <a href="link.html"><h1>これ見ろやゴラァ</h1></a>
+        <a href="Movie.html"><h1>動画共有</h1></a>
+    </div>
+<p><span id="sample5">敬エ、崇メロ、跪イテ懇願シテ糞尿垂ラシテ惨メッタラシク泣キ喚ケ、クズ肉ドモ！</span></p>
+<p><span id="sample6">キャハハハハッ！</span></p>
+    <script>
+        function uploadFile() {
+            const fileInput = document.getElementById('fileInput').files[0];
+            const formData = new FormData();
+            formData.append('file', fileInput);
+
+            fetch('http://localhost:5000/upload', {
+                method: 'POST',
+                body: formData
+            }).then(response => response.text())
+              .then(data => alert(data));
+        }
+
+        function sendMessage() {
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+
+            fetch('http://localhost:5000/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, message })
+            }).then(response => response.text())
+              .then(data => alert(data));
+        }
+
+        function loadLinks() {
+            fetch('http://localhost:5000/links')
+                .then(response => response.json())
+                .then(data => {
+                    const list = document.getElementById('linkList');
+                    list.innerHTML = '';
+                    data.forEach(link => {
+                        const li = document.createElement('li');
+                        li.innerHTML = `<a href="${link.url}" target="_blank">${link.name}</a>`;
+                        list.appendChild(li);
+                    });
+                });
+        }
+
+        window.unload = loadLinks;
+    </script>
+    <style type="text/css">
+        <!--
+        span{
+        font-size : 100%;
+        color : #ffd700;
+        background-color : #000000
+             }
+        #sample0 {
+ 　　　　font-size : 200%
+             }
+        #sample1 {
+        font-size : 200%
+             }
+        #sample2 {
+        font-size : 200%
+             }
+        #sample3 {
+        font-size : 200%
+             }
+        #sample4 {
+        font-size : 200%
+             }
+        #sample5 {
+        font-size : 200%
+             }
+        #sample6 {
+        font-size : 200%
+             }
+        #sample7 {
+        font-size : 120%
+        color : #2f4f4f
+        background-color : #ffd700
+             }
+    </style>
+</body>
+</html>

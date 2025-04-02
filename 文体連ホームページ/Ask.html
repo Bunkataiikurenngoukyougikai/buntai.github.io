@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<link rel="icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="https://www.wef.com.tw/wp-content/uploads/2021/09/KUAS-logo1.jpg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせフォーム</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body background="https://png.pngtree.com/background/20230514/original/pngtree-watercolor-lilac-pastel-background-for-wedding-invitation-picture-image_2531442.jpg">
+    <h2>問い合わせてみよか</h2>
+    <div class="section">
+    <form action="submit.php" method="post">
+        <label for="name">ご芳名(name):</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="subject">件名(subject):</label>
+        <input type="text" id="subject" name="subject" required>
+
+        <label for="message">お問い合わせ内容:</label>
+        <textarea id="message" name="message" rows="25" required></textarea>
+
+        <button type="submit">送信</button>
+    </form>
+        </div>
+
+</body>
+</html>
